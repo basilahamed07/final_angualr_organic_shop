@@ -1,1 +1,25 @@
-<p>feedback works!</p>
+<h3 class="text-xl font-semibold mb-4">Order Details</h3>
+<table class="order-table">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>email</th>
+      <th>Message Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trash of data">
+      <td>{{trash.user_id}}</td>
+      <td>{{trash.order_id}}</td>
+      <td>{{trash.shipping_id}}</td>
+      <td>{{trash.order_date}}</td>
+      <td>{{trash.Total_amount}}</td>
+      <td>{{trash.products_id}}</td>
+      <td> 
+        <button type="button" (click)="deleteDataprodact(trash.id)"
+            class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 transition-transform transform hover:scale-105">
+            DELETE
+        </button></td>
+    </tr>
+  </tbody>
+</table>

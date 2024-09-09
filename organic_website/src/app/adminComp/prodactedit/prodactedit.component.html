@@ -1,1 +1,107 @@
-<p>prodactedit works!</p>
+<div class="background">
+    <div class="max-w-md mx-auto p-8 bg-gray-800 rounded-md shadow-md form-container">
+      <h1 class="">Product Adding</h1>
+      <br><br>
+  
+      <form  (ngSubmit)="addData()">
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_Name" class="block text-gray-300 text-sm font-bold mb-2">Product Name</label>
+            <input type="text" name="P_Name" id="P_Name" [(ngModel)]="prodact.P_Name" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_Name').touched && 
+              userForm.get('P_Name').invalid">
+                  <div *ngIf="userForm.get('P_Name').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_Name').errors.pattern">prodact must contain only character min-3 and max-20</div>
+              </div>
+          </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_description" class="block text-gray-300 text-sm font-bold mb-2">Product Description</label>
+            <textarea id="P_description" name="P_description" [(ngModel)]="prodact.P_description" rows="4" placeholder="Enter the product description" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white"></textarea>
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_description').touched && 
+              userForm.get('P_description').invalid">
+                  <div *ngIf="userForm.get('P_description').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_description').errors.pattern">minimum 10 words</div>
+              </div>
+            </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_Price" class="block text-gray-300 text-sm font-bold mb-2">Product Price</label>
+            <input type="number" name="P_Price" id="P_Price" [(ngModel)]="prodact.P_Price" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_Price').touched && 
+              userForm.get('P_Price').invalid">
+                  <div *ngIf="userForm.get('P_Price').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_Price').errors.pattern">only number</div>
+              </div>
+          
+            </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_Stock" class="block text-gray-300 text-sm font-bold mb-2">Stock No:</label>
+            <input type="number" name="P_Stock" id="P_Stock" [(ngModel)]="prodact.P_Stock" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_Stock').touched && 
+              userForm.get('P_Stock').invalid">
+                  <div *ngIf="userForm.get('P_Stock').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_Stock').errors.pattern">only number up to 5000</div>
+              </div>
+          
+            </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_Brand" class="block text-gray-300 text-sm font-bold mb-2">Brand Name</label>
+            <input type="text" name="P_Brand" id="P_Brand" [(ngModel)]="prodact.P_Brand" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_Brand').touched && 
+              userForm.get('P_Brand').invalid">
+                  <div *ngIf="userForm.get('P_Brand').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_Brand').errors.pattern">enter the brand upto 100 words</div>
+              </div>
+            </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_Category_id" class="block text-gray-300 text-sm font-bold mb-2">Product Category ID</label>
+            <input type="text" name="P_Category_id" id="P_Category_id" [(ngModel)]="prodact.P_Category_id" required
+              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+              <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_Category_id').touched && 
+              userForm.get('P_Category_id').invalid">
+                  <div *ngIf="userForm.get('P_Category_id').errors.required">this fiels is required</div>
+                  <div *ngIf="userForm.get('P_Category_id').errors.pattern">contain only 1 to 4</div>
+              </div>
+          
+            </div>
+        </div>
+  
+        <div class="mb-4">
+          <div class="form-group">
+            <label for="P_image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Image</label>
+            <input type="file" name="P_image" id="P_image" (change)="onFileChange($event)"
+              class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('P_image').touched &&
+              userForm.get('P_image').invalid">
+                  <div *ngIf="userForm.get('P_image').errors.required">this fiels is required</div>
+                  <!-- <div *ngIf="userForm.get('P_image').errors.pattern"></div> -->
+              </div>
+          
+            </div>
+        </div>
+  
+        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4">Update</button>
+      </form>
+    </div>
+  </div>
+  

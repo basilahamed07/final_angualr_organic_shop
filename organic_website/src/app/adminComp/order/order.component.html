@@ -1,1 +1,23 @@
-<p>order works!</p>
+<h3 class="text-xl font-semibold mb-4">Order Details</h3>
+<table class="order-table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Order ID</th>
+      <th>Shipping ID</th>
+      <th>Order Date</th>
+      <th>Total Amount</th>
+      <th>Product</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trash of data">
+      <td>{{trash.user_id}}</td>
+      <td>{{trash.order_id}}</td>
+      <td>{{trash.shipping_id}}</td>
+      <td>{{trash.order_date}}</td>
+      <td>{{trash.Total_amount}}</td>
+      <td>{{trash.products_id}}</td>
+    </tr>
+  </tbody>
+</table>

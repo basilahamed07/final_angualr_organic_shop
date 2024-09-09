@@ -1,1 +1,28 @@
-<p>shipping works!</p>
+<div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+    <h3 class="text-2xl font-bold text-white mb-6">Shipping Details</h3>
+    <table class="min-w-full bg-gray-800 text-gray-200 rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-700 text-gray-300">
+            <tr>
+                <th class="py-3 px-6 text-left">Shipping Id</th>
+                <th class="py-3 px-6 text-left">Shipping Status</th>
+                <th class="py-3 px-6 text-left">Tracking Id</th>
+                <th class="py-3 px-6 text-left">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data" class="hover:bg-gray-700 transition duration-300 ease-in-out">
+                <td class="py-4 px-6 border-t border-gray-600">{{item.Shipping_id}}</td>
+                <td class="py-4 px-6 border-t border-gray-600">{{item.shipping_status}}</td>
+                <td class="py-4 px-6 border-t border-gray-600">{{item.tracking_id}}</td>
+                <td class="py-4 px-6 border-t border-gray-600">
+                    <ng-container *ngIf="item.shipping_status === 'P'; else delivered">
+                        <span class="bg-yellow-500 text-gray-900 px-2 py-1 rounded-full text-sm font-semibold">2 Day Delivery</span>
+                    </ng-container>
+                    <ng-template #delivered>
+                        <span class="bg-green-500 text-white px-2 py-1 rounded-full text-sm font-semibold">Delivered</span>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

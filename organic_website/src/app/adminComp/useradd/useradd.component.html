@@ -1,1 +1,235 @@
-<p>useradd works!</p>
+<div class="max-w-md mx-auto p-8 bg-gray-800 rounded-md shadow-md form-container">
+    
+    <h1 class="">User adding </h1>
+    <br><br>
+    
+    
+    <form [formGroup]="userForm" (ngSubmit)="getData(form)" #form="ngForm">
+
+
+
+
+<!-- // first name -->
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">First name</label>
+        <input type="text" name="first_name" formControlName="first_name" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          
+          <!-- //validation -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('first_name').touched && 
+        userForm.get('first_name').invalid">
+            <div *ngIf="userForm.get('first_name').errors.required">this fiels is required</div>
+            <div *ngIf="userForm.get('first_name').errors.pattern">fname must contain only character min-3 and max-20</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">Last name</label>
+        <input type="text" name="last_name" formControlName="last_name" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('last_name').touched && 
+        userForm.get('last_name').invalid">
+            <div *ngIf="userForm.get('last_name').errors.required">this fiels is required</div>
+            <div *ngIf="userForm.get('last_name').errors.pattern">lname must contain only character min-3 and max-20</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">email id</label>
+        <input type="email" name="email" formControlName="email" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('email').touched && 
+        userForm.get('email').invalid">
+            <div *ngIf="userForm.get('email').errors.required">this fiels is required</div>
+            <div *ngIf="userForm.get('email').errors.pattern">enter the valid email id</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">password</label>
+        <input type="password" name="password" formControlName="password" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('password').touched && 
+        userForm.get('password').invalid">
+            <div *ngIf="userForm.get('password').errors.required">this fiels is required</div>
+            <div *ngIf="userForm.get('password').errors.pattern">password shoud contain 8 - 16</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">phone name</label>
+        <input type="number" name="phone_number" formControlName="phone_number" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="userForm.get('phone_number').touched && 
+        userForm.get('phone_number').invalid">
+            <div *ngIf="userForm.get('phone_number').errors.required">this fiels is required</div>
+            <div *ngIf="userForm.get('phone_number').errors.pattern">contain number only upto 10</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">address</label>
+        <input type="text" name="first_line" formControlName="first_line" 
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          <div class="text-red-600 text-sm font-bold" *ngIf=" 
+        userForm.get('first_line').invalid">
+            <!-- <div *ngIf="userForm.get('first_line').errors.required">this fiels is required</div> -->
+            <div *ngIf="userForm.get('first_line').errors.pattern">address must contain only character min-3 and max-20</div>
+        </div>
+      </div>
+      </div>
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">city name</label>
+        <input type="text" name="city" formControlName="city" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf="
+        userForm.get('city').invalid">
+            <!-- <div *ngIf="userForm.get('city').errors.required">this fiels is required</div> -->
+            <div *ngIf="userForm.get('city').errors.pattern">city must contain only character min-3 and max-20</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">state name</label>
+        <input type="text" name="state" formControlName="state" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          
+          
+          <!-- // validadtion -->
+          <div class="text-red-600 text-sm font-bold" *ngIf=" 
+        userForm.get('state').invalid">
+            <!-- <div *ngIf="userForm.get('state').errors.required">this fiels is required</div> -->
+            <div *ngIf="userForm.get('state').errors.pattern">state must contain only character min-3 and max-20</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+      
+
+
+
+
+      <div class="mb-4">
+        <div class="form-group">
+        <label for="" class="block text-gray-300 text-sm font-bold mb-2">pincode</label>
+        <input type="number" name="pincode" formControlName="pincode" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+          <div class="text-red-600 text-sm font-bold" *ngIf=" 
+        userForm.get('pincode').invalid">
+            <!-- <div *ngIf="userForm.get('pincode').errors.required">this fiels is required</div> -->
+            <div *ngIf="userForm.get('pincode').errors.pattern">only number upto 6 digite</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+      <!-- <div class="mb-4">
+        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-white">
+      </div> -->
+
+
+
+
+
+      <button type="submit"
+        class="bg-blue-500 text-white font-bold py-2 px-4">
+        Send Message 
+      </button>
+
+    </form>
+  </div>
