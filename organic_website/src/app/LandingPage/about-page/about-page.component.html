@@ -1,33 +1,101 @@
-<div class="top">
-
+<div class="relative bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/d1/80/1b/d1801b8adfbc474a36633d653cc6b577.jpg'); height: 300px;">
+    <h1 id="heading" class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold bg-black bg-opacity-0 p-4">About Page</h1>
 </div>
-<div><P>Store Background</P></div>
-
-
-
-<div class="middle">
-    
-    <img src="/src/asserts/image/aple.jpg"
-    alt="image" class="gsaplogo">
-    <p>Welcome to [Store Name], your go-to destination for premium organic products! Founded in [Year] by [Founder's Name(s)], our journey began with a passion for promoting a healthier lifestyle and a commitment to sustainable practices. Inspired by the growing need for high-quality, organic goods, we set out to create a store where quality meets integrity.</p>
+<br><br><br>
+<div class="p-6">
+    <!-- Additional content here -->
 </div>
 
+<!-- Content of the about page -->
+
+<div class="grid grid-cols-2 gap-4 p-6">
+    <div class="flex items-center justify-center">
+        <div id="box-2" class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-lg shadow-md" [ngStyle]="{'background-image': 'url(' + images[0] + ')'}">>
+            <h2 class="text-2xl">Store Background</h2>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+        <p class="text-gray-700">Established in 2020, our organic store was founded by Jane Doe and John Smith. Inspired by a passion for healthy living and sustainability, we embarked on a mission to bring the highest quality organic products to our community.</p>
+    </div>
+</div>
+
+<br><br>
+<div class="grid grid-cols-2 gap-4 p-6">
+    <div class="flex items-center justify-center">
+        
+        <p class="text-gray-700">Our mission is to provide organic products that nourish the body and soul while promoting environmental stewardship. We strive to be a leader in the organic movement and inspire others to make healthier choices.</p>
+    </div>
+    <div class="flex items-center justify-center">
+        <div id="box-3" class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-lg shadow-md">
+            <!-- Content inside #box-3, if any -->
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-2 gap-4 p-6">
+    <div class="flex items-center justify-center">
+        <div id="box-4" class="w-full h-80 bg-gray-200 flex items-center justify-center rounded-lg shadow-md">
+            values and Philosophy
+        </div>
+    </div>
+    <div class="flex items-center justify-center">
+        <h2 class="text-3xl font-semibold mb-4">Values and Philosophy</h2>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Integrity: We operate with honesty and transparency.</li>
+        <li>Sustainability: We prioritize eco-friendly practices and products.</li>
+        <li>Quality: We offer only the best organic goods available.</li>
+        <li>Community: We actively engage with and support our local community.</li>
+      </ul>
+</div>
 
 
 
-<div class="middle">
-    <img src="/assets/gsap.svg" 
-    alt="image" class="gsaplogo">
+
+<div class="grid grid-cols-2 gap-4 p-6">
+    <div class="flex items-center justify-center">
+        <p class="text-gray-700">Welcome to [Store Name], your go-to destination for premium organic products! Founded in [Year] by [Founder's Name(s)], our journey began with a passion for promoting a healthier lifestyle and a commitment to sustainable practices. Inspired by the growing need for high-quality, organic goods, we set out to create a store where quality meets integrity.</p>
+    </div>
+    <div class="flex items-center justify-center">
+        <div id="box-5" class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-lg shadow-md">
+            <!-- Content inside #box-5, if any -->
+        </div>
+    </div>
 </div>
-<div class="middle">
-    <img src="/assets/gsap.svg" 
-    alt="image" class="gsaplogo">
+
+
+
+
+
+<div class="grid grid-cols-2 gap-4 p-6">
+    <div class="flex items-center justify-center">
+        <div id="box-6" class="w-full h-72 bg-gray-200 flex items-center justify-center rounded-lg shadow-md">
+            <!-- Content inside #box-6, if any -->
+        </div>
+    </div>
+    <div class="flex items-center justify-center">
+        <p class="text-gray-700">Welcome to [Store Name], your go-to destination for premium organic products! Founded in [Year] by [Founder's Name(s)], our journey began with a passion for promoting a healthier lifestyle and a commitment to sustainable practices. Inspired by the growing need for high-quality, organic goods, we set out to create a store where quality meets integrity.</p>
+    </div>
 </div>
-<div class="middle">
-    <img src="/assets/gsap.svg" 
-    alt="image" class="gsaplogo">
 </div>
-<div class="bottom">
-    <img src="/assets/sub.svg" 
-    alt="image" class="sublogo">
+
+
+<div id="page-2">
+    <h1>Hello 👋  Meet out out team.</h1>
 </div>
+
+
+
+
+<div>
+    <app-teams></app-teams>
+</div>
+
+<div>
+    <app-feedbackform></app-feedbackform>
+</div>
+
+<div>
+    <app-navbar></app-navbar>
+</div>
+

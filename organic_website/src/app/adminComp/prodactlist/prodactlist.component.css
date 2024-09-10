@@ -1,3 +1,37 @@
+.background{
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+
+.background{
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.listss {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1{
+font-size: xx-large;
+}
+
+
+
+
 /* Animation for row hover effect */
 tr {
     transition: background-color 0.3s ease;

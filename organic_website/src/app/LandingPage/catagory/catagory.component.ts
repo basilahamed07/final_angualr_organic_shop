@@ -5,11 +5,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 @Component({
-  selector: 'app-about-page',
-  templateUrl: './about-page.component.html',
-  styleUrl: './about-page.component.css'
+  selector: 'app-catagory',
+  templateUrl: './catagory.component.html',
+  styleUrl: './catagory.component.scss'
 })
-export class AboutPAgeComponent implements AfterViewInit {
+export class CatagoryComponent implements AfterViewInit {
 
 
   public images: string[] = [];
@@ -53,9 +53,7 @@ export class AboutPAgeComponent implements AfterViewInit {
       gsap.from("#box-2", {
         scale: 0,
         duration: 2,
-        rotation: "-170_short",
-        rotationX: "-=30_cw",
-        rotationY: "1.5rad_ccw",
+        rotate: 100,
         scrollTrigger: {
             trigger: "#box-2",
             scroller: "body",
@@ -106,10 +104,7 @@ export class AboutPAgeComponent implements AfterViewInit {
       gsap.from("#box-5", {
         scale: 0,
         duration: 2,
-        // rotate: 100,
-        rotation: "-170_short",
-        rotationX: "-=30_cw",
-        rotationY: "1.5rad_ccw",
+        rotate: 100,
         scrollTrigger: {
             trigger: "#box-5",
             scroller: "body",

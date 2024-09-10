@@ -21,7 +21,14 @@ import { FormsModule } from '@angular/forms';
 import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component';
 import { CaroselComponent } from './LandingPage/carosel/carosel.component';
 import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
-import { LandingpageComponent } from './LandingPage/landingpage/landingpage.component'; 
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { TeamsComponent } from './LandingPage/teams/teams.component';
+import { ScroolComponent } from './LandingPage/scrool/scrool.component';
+import { FeedbackformComponent } from './LandingPage/feedbackform/feedbackform.component';
+import { NavbarComponent } from './LandingPage/navbar/navbar.component';
+import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
+import { ListprojectComponent } from './LandingPage/listproject/listproject.component';
+
 
 
 
@@ -43,7 +50,14 @@ import { LandingpageComponent } from './LandingPage/landingpage/landingpage.comp
     GeneratecopComponent,
     CaroselComponent,
     AboutPAgeComponent,
-    LandingpageComponent,
+    UserprofileComponent,
+    TeamsComponent,
+    ScroolComponent,
+    FeedbackformComponent,
+    NavbarComponent,
+    CatagoryComponent,
+    ListprojectComponent,
+
   ],
   imports: [
     BrowserModule,

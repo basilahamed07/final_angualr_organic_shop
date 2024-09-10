@@ -13,9 +13,11 @@ import { FeedbackComponent } from './adminComp/feedback/feedback.component';
 import { ShippingComponent } from './adminComp/shipping/shipping.component';
 import { CopondComponent } from './adminComp/copond/copond.component';
 import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component';
-import { LandingpageComponent } from './LandingPage/landingpage/landingpage.component';
-import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
 
+import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { ListprojectComponent } from './LandingPage/listproject/listproject.component';
+import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
 const routes: Routes = [
 
   {path:"", component:LoginComponent},
@@ -32,12 +34,16 @@ const routes: Routes = [
     {path:"shipping", component:ShippingComponent},
     {path:"copond", component:CopondComponent},
     {path:"gencop", component:GeneratecopComponent},
+    {path:"userprofile", component:UserprofileComponent},
 
   ]},
-  {path:"landingpage", component:LandingpageComponent, children:[
-    {path:"", component:AboutPAgeComponent},
-  ]}
-
+  {path:"landingpage", component:AboutPAgeComponent, children:[
+  
+    
+    // {path:"courser", component:ImagetestComponent}
+  ]},
+  {path:"prodactlist", component:ListprojectComponent},
+  {path:"catagory", component:CatagoryComponent},
 
 ];
 
