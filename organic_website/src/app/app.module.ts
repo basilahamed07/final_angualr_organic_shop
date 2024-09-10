@@ -18,7 +18,10 @@ import { CopondComponent } from './adminComp/copond/copond.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component'; 
+import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component';
+import { CaroselComponent } from './LandingPage/carosel/carosel.component';
+import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
+import { LandingpageComponent } from './LandingPage/landingpage/landingpage.component'; 
 
 
 
@@ -38,6 +41,9 @@ import { GeneratecopComponent } from './adminComp/generatecop/generatecop.compon
     CopondComponent,
     LoginComponent,
     GeneratecopComponent,
+    CaroselComponent,
+    AboutPAgeComponent,
+    LandingpageComponent,
   ],
   imports: [
     BrowserModule,

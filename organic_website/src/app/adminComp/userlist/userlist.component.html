@@ -1,35 +1,30 @@
 <div class="bg-gray-800 rounded-xl p-6 mb-8 shadow-lg">
-    <h3 class="text-2xl font-semibold mb-4 text-white">Product Details</h3>
-    <table class="w-full text-gray-200">
+    <h3 class="text-2xl font-semibold mb-4 text-white">User List</h3>
+    
+    <!-- Search Input -->
+    <div class="mb-4">
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search by username" class="p-2 rounded-lg w-full">
+    </div>
+
+    <table class="w-full mb-4 text-gray-200">
         <thead>
-            <tr class="bg-gray-700 text-left border-b border-gray-600">
-                <th class="py-3 px-4">username</th>
-                <th class="py-3 px-4">phone_number</th>
-                <th class="py-3 px-4">address</th>
-                <th class="py-3 px-4">city</th>
-                <th class="py-3 px-4">pincode</th>
-                <th class="py-3 px-4">Action</th>
+            <tr class="bg-gray-700 text-left border-b mt-4 border-gray-600">
+                <th class="py-3 px-4">Username</th>
+                <th class="py-3 px-4">Phone Number</th>
+                <th class="py-3 px-4">Address</th>
+                <th class="py-3 px-4">City</th>
+                <th class="py-3 px-4">Pincode</th>
+               
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let trash of data" class="transition-transform transform hover:scale-105 hover:bg-gray-700 border-b border-gray-600">
-                <td class="py-2 px-4 flex items-center">
-                    <img class="w-12 h-12 rounded-full object-cover" [src]="trash.username" alt="user image">
-                </td>
-                <td class="py-2 px-4">{{trash.username}}</td>
-                <td class="py-2 px-4">{{trash.phone_number}}</td>
-                <td class="py-2 px-4">{{trash.address}}</td>
-                <td class="py-2 px-4">{{trash.city}}</td>
-                <td class="py-2 px-4">
-                    <!-- <button type="button" routerLink="/admindash/{{trash.id}}/editeprodact"
-                        class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 transition-transform transform hover:scale-105">
-                        EDIT
-                    </button> -->
-                    <button type="button" (click)="deleteDataprodact(trash.id)"
-                        class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 transition-transform transform hover:scale-105">
-                        DELETE
-                    </button>
-                </td>
+            <tr *ngFor="let user of filteredData()" class="transition-transform transform hover:scale-105 hover:bg-gray-700 border-b border-gray-600">
+                <td class="py-2 px-4">{{user.username}}</td>
+                <td class="py-2 px-4">{{user.phone_number}}</td>
+                <td class="py-2 px-4">{{user.address}}</td>
+                <td class="py-2 px-4">{{user.city}}</td>
+                <td class="py-2 px-4">{{user.pincode}}</td>
+        
             </tr>
         </tbody>
     </table>

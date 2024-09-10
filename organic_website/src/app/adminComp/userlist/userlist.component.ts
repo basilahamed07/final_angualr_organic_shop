@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
-import { Session } from 'inspector';
-
 
 @Component({
   selector: 'app-userlist',
   templateUrl: './userlist.component.html',
-  styleUrl: './userlist.component.css'
+  styleUrls: ['./userlist.component.css']
 })
 export class UserlistComponent implements OnInit {
-  data: any[] = []; // Array to hold the product data
+  data: any[] = []; // Array to hold the user data
   access: string | null = sessionStorage.getItem("access");
+  searchQuery: string = ''; // Property to hold the search query
 
   constructor(private apiservice: HttpClient, private route: Router) {}
 
@@ -38,25 +36,32 @@ export class UserlistComponent implements OnInit {
       );
   }
 
-  deleteDataprodact(id: number) {
+  deleteData(id: number) {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.access}`
     });
 
-    // users/{user_id}/delete/
-
-    if (confirm('Are you sure you want to delete this product?')) {
+    if (confirm('Are you sure you want to delete this user?')) {
       this.apiservice.delete(`http://localhost:8000/admin/admin/users/${id}/delete/`, { headers })
         .subscribe(
           () => {
-            // this.data = this.data.filter(item => item.id !== id); // Remove deleted item from array
-            alert('Product deleted successfully!');
+            this.data = this.data.filter(item => item.id !== id); // Remove deleted item from array
+            alert('User deleted successfully!');
           },
           error => {
-            console.error('Error deleting product', error);
-            alert('Error deleting product. Please try again.');
+            console.error('Error deleting user', error);
+            alert('Error deleting user. Please try again.');
           }
         );
     }
+  }
+
+  filteredData() {
+    if (!this.searchQuery) {
+      return this.data;
+    }
+    return this.data.filter(user =>
+      user.username.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
   }
 }

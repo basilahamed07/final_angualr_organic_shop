@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
-import { Session } from 'inspector';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-prodactlist',
   templateUrl: './prodactlist.component.html',
-  styleUrl: './prodactlist.component.css'
+  styleUrls: ['./prodactlist.component.css']
 })
 export class ProdactlistComponent implements OnInit {
   data: any[] = []; // Array to hold the product data
+  filteredData: any[] = []; // Array to hold the filtered data
+  searchTerm: string = ''; // Search term for filtering
   access: string | null = sessionStorage.getItem("access");
 
   constructor(private apiservice: HttpClient, private route: Router) {}
@@ -29,6 +29,7 @@ export class ProdactlistComponent implements OnInit {
       .subscribe(
         (response: any) => {
           this.data = response; // Store the fetched data
+          this.filteredData = this.data; // Initialize filtered data
           console.log('Data fetched successfully', this.data);
         },
         error => {
@@ -36,6 +37,16 @@ export class ProdactlistComponent implements OnInit {
           alert('Error fetching data. Please try again.');
         }
       );
+  }
+
+  filterProducts() {
+    if (!this.searchTerm) {
+      this.filteredData = this.data;
+    } else {
+      this.filteredData = this.data.filter(product => 
+        product.P_Name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
   }
 
   deleteDataprodact(id: number) {
@@ -48,6 +59,7 @@ export class ProdactlistComponent implements OnInit {
         .subscribe(
           () => {
             this.data = this.data.filter(item => item.id !== id); // Remove deleted item from array
+            this.filterProducts(); // Re-filter the data
             alert('Product deleted successfully!');
           },
           error => {

@@ -13,6 +13,8 @@ import { FeedbackComponent } from './adminComp/feedback/feedback.component';
 import { ShippingComponent } from './adminComp/shipping/shipping.component';
 import { CopondComponent } from './adminComp/copond/copond.component';
 import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component';
+import { LandingpageComponent } from './LandingPage/landingpage/landingpage.component';
+import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
 
 const routes: Routes = [
 
@@ -31,7 +33,11 @@ const routes: Routes = [
     {path:"copond", component:CopondComponent},
     {path:"gencop", component:GeneratecopComponent},
 
+  ]},
+  {path:"landingpage", component:LandingpageComponent, children:[
+    {path:"", component:AboutPAgeComponent},
   ]}
+
 
 ];
 

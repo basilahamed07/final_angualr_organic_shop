@@ -36,6 +36,8 @@ export class ProdactaddComponent implements OnInit {
       return;
     }
 
+    
+
     if (!this.file) {
       window.alert("Please select an image file.");
       return;
@@ -53,8 +55,12 @@ export class ProdactaddComponent implements OnInit {
     formData.append('P_Brand', form.value.P_Brand);
     formData.append('P_Category_id', form.value.P_Category_id);
     formData.append('P_image', this.file);
+    console.log(formData)
 
-    this.apiservice.post('http://localhost:8000/api/Prodact_Table/', formData, { headers }).subscribe(
+    if (this.file) {
+      formData.append('P_image', this.file, this.file.name);
+    }
+    this.apiservice.post('http://localhost:8000/api/Product_Table/', formData, { headers }).subscribe(
       () => {
         console.log('Order placed successfully');
         alert('Order placed successfully!');
@@ -66,10 +72,9 @@ export class ProdactaddComponent implements OnInit {
     );
   }
 
-  onFileChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.file = file;
+  onFileChange(event: any): void {
+    if (event.target.files.length > 0) {
+      this.file = event.target.files[0];
     }
   }
 }
