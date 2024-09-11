@@ -33,6 +33,7 @@ import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-char
  
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-prodact.component';
+import { LoadingpageComponent } from './loadingpage/loadingpage.component';
 
 
 
@@ -65,6 +66,7 @@ import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-
     ListprojectComponent,
     AnalysisChartComponent,
     AnalysisProdactComponent,
+    LoadingpageComponent,
 
 
   ],
