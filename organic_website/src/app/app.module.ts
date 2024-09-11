@@ -28,7 +28,10 @@ import { FeedbackformComponent } from './LandingPage/feedbackform/feedbackform.c
 import { NavbarComponent } from './LandingPage/navbar/navbar.component';
 import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
 import { ListprojectComponent } from './LandingPage/listproject/listproject.component';
+import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-chart.component';
 
+ 
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 
 
@@ -57,6 +60,7 @@ import { ListprojectComponent } from './LandingPage/listproject/listproject.comp
     NavbarComponent,
     CatagoryComponent,
     ListprojectComponent,
+    AnalysisChartComponent,
 
   ],
   imports: [
@@ -64,7 +68,9 @@ import { ListprojectComponent } from './LandingPage/listproject/listproject.comp
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CanvasJSAngularChartsModule
+    
   ],
   providers: [
     provideClientHydration()

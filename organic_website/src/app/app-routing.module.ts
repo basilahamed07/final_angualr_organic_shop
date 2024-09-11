@@ -18,6 +18,7 @@ import { AboutPAgeComponent } from './LandingPage/about-page/about-page.componen
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { ListprojectComponent } from './LandingPage/listproject/listproject.component';
 import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
+import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-chart.component';
 const routes: Routes = [
 
   {path:"", component:LoginComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
     {path:"copond", component:CopondComponent},
     {path:"gencop", component:GeneratecopComponent},
     {path:"userprofile", component:UserprofileComponent},
+    {path:"chart", component:AnalysisChartComponent},
 
   ]},
   {path:"landingpage", component:AboutPAgeComponent, children:[
@@ -44,6 +46,7 @@ const routes: Routes = [
   ]},
   {path:"prodactlist", component:ListprojectComponent},
   {path:"catagory", component:CatagoryComponent},
+  
 
 ];
 
