@@ -20,6 +20,11 @@ import { ListprojectComponent } from './LandingPage/listproject/listproject.comp
 import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
 import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-chart.component';
 import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-prodact.component';
+import { error } from 'console';
+import { Error404Component } from './error404/error404.component';
+import { ViewCartComponent } from './check_out/view-cart/view-cart.component';
+import { ViewOrdersComponent } from './check_out/view-orders/view-orders.component.spec';
+import { ThankyouComponent } from './check_out/thankyou/thankyou.component';
 const routes: Routes = [
 
   {path:"", component:LoginComponent},
@@ -48,6 +53,16 @@ const routes: Routes = [
   ]},
   {path:"prodactlist", component:ListprojectComponent},
   {path:"catagory", component:CatagoryComponent},
+
+
+  {path:"cart", component:ViewCartComponent},
+  {path:"orders", component:ViewOrdersComponent},
+  // {path:"prodactlist", component:ListprojectComponent},
+  {path:"catagory", component:CatagoryComponent},
+  {path:"thankyou", component:ThankyouComponent},
+
+
+  {path:"**", component:Error404Component},
   
 
 ];

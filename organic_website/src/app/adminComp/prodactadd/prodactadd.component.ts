@@ -62,8 +62,8 @@ export class ProdactaddComponent implements OnInit {
     }
     this.apiservice.post('http://localhost:8000/api/Product_Table/', formData, { headers }).subscribe(
       () => {
-        console.log('Order placed successfully');
-        alert('Order placed successfully!');
+        console.log('Prodact add successfully');
+        alert('Prodact add successfully!');
       },
       error => {
         console.error('Error placing order', error);

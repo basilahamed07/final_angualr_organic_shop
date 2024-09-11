@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Orders List</h2>
+  
+    <div *ngFor="let order of orders; let orderIndex = index" class="order-card">
+      <h3>Order #{{ orderIndex + 1 }}</h3>
+      <p><strong>Order Date:</strong> {{ order.order_date }}</p>
+      <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+      <p><strong>Shipping status:</strong> {{ order.shipping_details?.shipping_status }}</p>
+  
+      <!-- Button to toggle the visibility of details -->
+      <button (click)="toggleDetails(orderIndex)">
+        {{ order.showDetails ? 'Hide Details' : 'View Details' }}
+      </button>&nbsp;
+  
+      <!-- Button to cancel the order if shipping status is pending -->
+      <button *ngIf="order.shipping_details?.shipping_status === 'pending'" (click)="cancelOrder(order, orderIndex)">
+        Cancel Order
+      </button>
+  
+      <!-- Conditional display of order details -->
+      <div *ngIf="order.showDetails">
+        <p><strong>Shipping id:</strong> {{ order.shipping_id }}</p>
+        <p><strong>Shipping id:</strong> {{ order.shipping_details?.Shipping_id }}</p>
+        <p><strong>Tracking id:</strong> {{ order.shipping_details?.tracking_id }}</p>
+        <p><strong>Adress:</strong> {{ order.shipping_details?.first_line }}</p>
+        <p><strong>City:</strong> {{ order.shipping_details?.city }}</p>
+        <p><strong>State:</strong> {{ order.shipping_details?.state }}</p>
+        <p><strong>Pincode:</strong> {{ order.shipping_details?.pincode }}</p>
+  
+        <div *ngFor="let product of order.products; let productIndex = index" class="product-card">
+          <h4>Product: {{ product.P_Name }}</h4>
+          <p><strong>Description:</strong> {{ product.P_description }}</p>
+          <p><strong>Price:</strong> ${{ product.P_Price }}</p>
+          <p><strong>Quantity:</strong> {{ order.quantities[productIndex] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

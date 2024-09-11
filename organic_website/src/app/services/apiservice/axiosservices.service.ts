@@ -15,7 +15,7 @@ export class AxiosservicesService {
 
 
   userLogin(userObj: any) {
-    return this.http.post("http://172.17.7.104:8000/api/token/", userObj).pipe(
+    return this.http.post("172.17.7.104:8000/api/token/", userObj).pipe(
       
       map((resonse: any) => {
         console.log(resonse);

@@ -18,6 +18,7 @@ import { CopondComponent } from './adminComp/copond/copond.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+
 import { GeneratecopComponent } from './adminComp/generatecop/generatecop.component';
 import { CaroselComponent } from './LandingPage/carosel/carosel.component';
 import { AboutPAgeComponent } from './LandingPage/about-page/about-page.component';
@@ -34,10 +35,14 @@ import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-char
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-prodact.component';
 import { LoadingpageComponent } from './loadingpage/loadingpage.component';
-
-
-
-
+import { EmailtestComponent } from './emailtest/emailtest.component';
+import { Error404Component } from './error404/error404.component';
+// import { ThankyouComponent } from './check_out/thankyou/thankyou.component';
+import { ViewCartComponent } from './check_out/view-cart/view-cart.component';
+import { ViewOrdersComponent } from './check_out/view-orders/view-orders.component.spec';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from "@angular/common";
+import { IgxCategoryChartModule } from 'igniteui-angular-charts';
 
 @NgModule({
   declarations: [
@@ -67,6 +72,12 @@ import { LoadingpageComponent } from './loadingpage/loadingpage.component';
     AnalysisChartComponent,
     AnalysisProdactComponent,
     LoadingpageComponent,
+    EmailtestComponent,
+    Error404Component,
+    // ThankyouComponent,
+    ViewCartComponent,
+    ViewOrdersComponent,
+    
 
 
   ],
@@ -76,7 +87,10 @@ import { LoadingpageComponent } from './loadingpage/loadingpage.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    CanvasJSAngularChartsModule
+    CanvasJSAngularChartsModule,
+    CommonModule,
+    IgxCategoryChartModule
+
     
   ],
   providers: [
