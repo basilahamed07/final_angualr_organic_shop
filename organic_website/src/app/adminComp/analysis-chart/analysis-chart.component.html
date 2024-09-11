@@ -1,3 +1,27 @@
-<div>
-    <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
-</div>                       
+<div class="grid grid-cols-4 gap-4 p-4">
+    <div class="bg-red-500 text-white flex items-center justify-center rounded-lg box">
+        Hello
+    </div>
+    <div class="bg-red-500 text-white flex items-center justify-center rounded-lg box">
+        Hello
+    </div>
+    <div class="bg-red-500 text-white flex items-center justify-center rounded-lg box">
+        Hello
+    </div>
+    <div class="bg-red-500 text-white flex items-center justify-center rounded-lg box">
+        Hello
+    </div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+    <div *ngIf="chartOptions">
+        <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
+      </div>
+    <div>
+        <app-analysis-prodact></app-analysis-prodact>
+</div>
+    <div>
+        <!-- <h1>{{userdatalength}}</h1> -->
+</div>
+</div>
+
+

@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormGroup,FormControl,Validators } from '@angular/forms';
-import { Session } from 'inspector';
 
 @Component({
   selector: 'app-shipping',
   templateUrl: './shipping.component.html',
-  styleUrl: './shipping.component.css'
+  styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
   data: any[] = []; // Array to hold the product data
   access: string | null = sessionStorage.getItem("access");
+  currentPage: number = 1;
+  pageSize: number = 10;
 
-  constructor(private apiservice: HttpClient, private route: Router) {}
+  get paginatedData() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.data.slice(startIndex, endIndex);
+  }
+
+  get totalPages() {
+    return Math.ceil(this.data.length / this.pageSize);
+  }
+
+  constructor(private apiservice: HttpClient, private route: Router) { }
 
   ngOnInit() {
     this.fetchData();
@@ -37,4 +47,9 @@ export class ShippingComponent implements OnInit {
       );
   }
 
-   }
+  changePage(page: number) {
+    if (page > 0 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
+  }
+}

@@ -10,8 +10,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of data" class="hover:bg-gray-700 transition duration-300 ease-in-out">
-                <td class="py-4 px-6 border-t border-gray-600">{{item.Shipping_id}}</td>
+            <tr *ngFor="let item of paginatedData" class="hover:bg-gray-700 transition duration-300 ease-in-out">
+                <td class="py-4 px-6 border-t border-gray-600">{{item.id}}</td>
                 <td class="py-4 px-6 border-t border-gray-600">{{item.shipping_status}}</td>
                 <td class="py-4 px-6 border-t border-gray-600">{{item.tracking_id}}</td>
                 <td class="py-4 px-6 border-t border-gray-600">
@@ -25,4 +25,10 @@
             </tr>
         </tbody>
     </table>
-</div>
+
+    <!-- Pagination Controls -->
+    <div class="flex justify-center mt-4">
+        <button (click)="changePage(currentPage - 1)" class="px-4 py-2 bg-gray-700 text-white rounded-lg mr-2">previous</button>
+        <button (click)="changePage(currentPage + 1)" class="px-4 py-2 bg-gray-700 text-white rounded-lg mr-2">Next</button>
+
+   

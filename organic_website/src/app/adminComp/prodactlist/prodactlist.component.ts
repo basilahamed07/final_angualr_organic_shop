@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-prodactlist',
@@ -13,8 +12,20 @@ export class ProdactlistComponent implements OnInit {
   filteredData: any[] = []; // Array to hold the filtered data
   searchTerm: string = ''; // Search term for filtering
   access: string | null = sessionStorage.getItem("access");
+  currentPage: number = 1;
+  pageSize: number = 10;
 
-  constructor(private apiservice: HttpClient, private route: Router) {}
+  get paginatedData() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.filteredData.slice(startIndex, endIndex);
+  }
+
+  get totalPages() {
+    return Math.ceil(this.filteredData.length / this.pageSize);
+  }
+
+  constructor(private apiservice: HttpClient, private route: Router) { }
 
   ngOnInit() {
     this.fetchData();
@@ -30,6 +41,7 @@ export class ProdactlistComponent implements OnInit {
         (response: any) => {
           this.data = response; // Store the fetched data
           this.filteredData = this.data; // Initialize filtered data
+          this.filterProducts(); // Re-filter the data to apply initial filters
           console.log('Data fetched successfully', this.data);
         },
         error => {
@@ -47,6 +59,7 @@ export class ProdactlistComponent implements OnInit {
         product.P_Name.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
     }
+    this.currentPage = 1; // Reset to the first page when filtering
   }
 
   deleteDataprodact(id: number) {
@@ -67,6 +80,12 @@ export class ProdactlistComponent implements OnInit {
             alert('Error deleting product. Please try again.');
           }
         );
+    }
+  }
+
+  changePage(page: number) {
+    if (page > 0 && page <= this.totalPages) {
+      this.currentPage = page;
     }
   }
 }

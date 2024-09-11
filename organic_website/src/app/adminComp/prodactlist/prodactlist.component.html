@@ -1,6 +1,5 @@
-
 <div class="listss">
-<div class="bg-gray-800 rounded-xl p-6 mb-8 shadow-lg">
+  <div class="bg-gray-800 rounded-xl p-6 mb-8 shadow-lg">
     <h3 class="text-2xl font-semibold mb-4 text-white">Product Details</h3>
   
     <!-- Search Input -->
@@ -26,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let trash of filteredData" class="transition-transform transform hover:scale-105 hover:bg-gray-700 border-b border-gray-600">
+        <tr *ngFor="let trash of paginatedData" class="transition-transform transform hover:scale-105 hover:bg-gray-700 border-b border-gray-600">
           <td class="py-2 px-4 flex items-center">
             <img class="w-12 h-12 rounded-full object-cover" [src]="trash.P_image" alt="Product image">
           </td>
@@ -52,6 +51,12 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Pagination Controls -->
+    <div class="flex justify-center mt-4">
+        <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1" class="px-4 py-2 bg-gray-700 text-white rounded-lg mr-2">Previous</button>
+        <span class="px-4 py-2 bg-gray-700 text-white rounded-lg">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages" class="px-4 py-2 bg-gray-700 text-white rounded-lg ml-2">Next</button>
+    </div>
   </div>
-  </div>
-  
+</div>

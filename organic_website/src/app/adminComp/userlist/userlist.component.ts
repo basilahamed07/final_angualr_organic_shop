@@ -7,8 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './userlist.component.html',
   styleUrls: ['./userlist.component.css']
 })
+
+
+
+
 export class UserlistComponent implements OnInit {
-  data: any[] = []; // Array to hold the user data
+  public data: any[] = []; // Array to hold the user data
   access: string | null = sessionStorage.getItem("access");
   searchQuery: string = ''; // Property to hold the search query
 

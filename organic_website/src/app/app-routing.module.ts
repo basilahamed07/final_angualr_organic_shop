@@ -19,12 +19,13 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { ListprojectComponent } from './LandingPage/listproject/listproject.component';
 import { CatagoryComponent } from './LandingPage/catagory/catagory.component';
 import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-chart.component';
+import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-prodact.component';
 const routes: Routes = [
 
   {path:"", component:LoginComponent},
   {path:"home", component:AdminDashbordComponent},
   {path:"admindash", component:AdminDashbordComponent, children:[
-    {path:"adminoverview", component:AdminoverviewComponent},
+    {path:"", component:AnalysisChartComponent},
     {path:"prodactadd", component:ProdactaddComponent},
     {path:"prodactlist", component:ProdactlistComponent},
     {path:":id/editeprodact", component:ProdacteditComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
     {path:"gencop", component:GeneratecopComponent},
     {path:"userprofile", component:UserprofileComponent},
     {path:"chart", component:AnalysisChartComponent},
+    {path:"chart1", component:AnalysisProdactComponent},
 
   ]},
   {path:"landingpage", component:AboutPAgeComponent, children:[

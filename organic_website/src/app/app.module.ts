@@ -32,6 +32,9 @@ import { AnalysisChartComponent } from './adminComp/analysis-chart/analysis-char
 
  
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { AnalysisProdactComponent } from './adminComp/analysis-prodact/analysis-prodact.component';
+
+
 
 
 
@@ -61,6 +64,8 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     CatagoryComponent,
     ListprojectComponent,
     AnalysisChartComponent,
+    AnalysisProdactComponent,
+
 
   ],
   imports: [
